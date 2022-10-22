@@ -1,10 +1,9 @@
-#ifndef INC_I2C_LCD_H_
-#define INC_I2C_LCD_H_
+#ifndef I2C_LCD_H_
+#define I2C_LCD_H_
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "stm32f4xx_hal.h"
-#include "i2c.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -74,7 +73,7 @@ private:
 	I2C_HandleTypeDef *handler;
 	void send(uint8_t value, uint8_t mode);
 public:
-	I2C_LCD(uint8_t address, uint8_t cols, uint8_t rows);
+	I2C_LCD(I2C_HandleTypeDef *hable, uint8_t address, uint8_t cols, uint8_t rows);
 	void home();
 	void set_cursor(uint8_t col, uint8_t row);
 	void clear();
@@ -90,4 +89,4 @@ public:
 }
 #endif
 
-#endif /* INC_I2C_LCD_H_ */
+#endif /* I2C_LCD_H_ */

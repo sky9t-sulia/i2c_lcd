@@ -4,13 +4,13 @@
 extern "C" {
 #endif
 
-I2C_LCD::I2C_LCD(uint8_t address, uint8_t cols, uint8_t rows) {
+I2C_LCD::I2C_LCD(I2C_HandleTypeDef *handle, uint8_t address, uint8_t cols, uint8_t rows) {
 
 	this->lcd_function = LCD_4BITMODE | LCD_5x8DOTS;
 	this->address = (address << 1); // shift address by one bit on stm32
 	this->cols = cols;
 	this->rows = rows;
-	this->handler = &hi2c1;
+	this->handler = handle;
 	this->bkl_config = LCD_BACKLIGHT;
 	this->lcd_control = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
 
