@@ -161,7 +161,7 @@ void I2C_LCD::send(uint8_t value, uint8_t mode) {
 	HAL_Delay(LCD_DELAY_MS);
 }
 
-void I2C_LCD::write_str(char *str) {
+void I2C_LCD::write_str(const char *str) {
 	while (*str) {
 		this->send((uint8_t) (*str), 1);
 		str++;

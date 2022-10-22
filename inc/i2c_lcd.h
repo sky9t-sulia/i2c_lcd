@@ -84,7 +84,7 @@ public:
 	void blink(bool on);
 	void cursor(bool on);
 	void entry_mode(bool ltr);
-	void write_str(char *str);
+	void write_str(const char *str);
 };
 
 #ifdef __cplusplus
