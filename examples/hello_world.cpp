@@ -11,7 +11,7 @@
 #define _COLS 20
 #define _ROWS 4
 
-extern I2C_HandleTypeDef hi2c1; // SPI1
+extern I2C_HandleTypeDef hi2c1; // I2C1
 
 I2C_LCD lcd(&hi2c1, 0x27, _COLS, _ROWS);
 
