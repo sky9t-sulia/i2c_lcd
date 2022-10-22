@@ -58,7 +58,6 @@ extern "C" {
 #define LCD_BLINKON 0x01
 #define LCD_BLINKOFF 0x00
 
-
 #define LCD_BACKLIGHT 0x08
 #define LCD_NOBACKLIGHT 0x0
 

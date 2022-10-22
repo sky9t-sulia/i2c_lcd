@@ -14,22 +14,22 @@ I2C_LCD::I2C_LCD(uint8_t address, uint8_t cols, uint8_t rows) {
 	this->bkl_config = LCD_BACKLIGHT;
 	this->lcd_control = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
 
-	HAL_Delay(50);
+	HAL_Delay(100);
 
 	this->backlight(false);
 	HAL_Delay(1000);
 
 	// we start in 8bit mode, try to set 4 bit mode
 	this->send(0x03 << 4, 0);
-	HAL_Delay(5); // wait min 4.1ms
+	HAL_Delay(6); // wait min 4.1ms
 
 	// second try
 	this->send(0x03 << 4, 0);
-	HAL_Delay(5); // wait min 4.1ms
+	HAL_Delay(6); // wait min 4.1ms
 
 	// third go!
 	this->send(0x03 << 4, 0);
-	HAL_Delay(2);
+	HAL_Delay(3);
 
 	// finally, set to 4-bit interface
 	this->send(0x02 << 4, 0);
